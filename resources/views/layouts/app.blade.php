@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Sacco Management System </title>
+  <title> {{!empty($meta_title) ? $meta_title : '' }} | Sacco Management System </title>
   <meta content="" name="description">
   <meta content="" name="keywords">   
 
@@ -51,7 +51,7 @@
               <div class="d-flex justify-content-center py-4">
                 <a href="" class="logo d-flex align-items-center w-auto">
                   <img src="{{url('public/img/sacco2.jpeg' )}}" alt="">
-                  <span class="d-none d-lg-block">Sacco M.S</span>
+                  <span class="d-none d-lg-block">SACCO</span>
                 </a>
               </div>
               <!-- End Logo -->
@@ -63,7 +63,7 @@
 
               <div class="credits">
             
-                Designed by <a href="https://ogiki477.me/">Ogiki Moses Odera</a>
+                Designed by <a href="https://ogiki477.me/" target="blank">Ogiki Moses Odera</a>
               </div>
 
             </div>
