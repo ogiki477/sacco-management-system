@@ -38,7 +38,7 @@
 
     @include('admin.layouts._sidebar')
 
-
+    @include('message')
   <main id="main" class="main">
    
     @yield('content')

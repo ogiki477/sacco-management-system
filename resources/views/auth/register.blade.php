@@ -14,17 +14,18 @@
         <p class="text-center small">Enter your personal details to create account</p>
       </div>
 
-      <form  action="" method="post"   class="row g-3 needs-validation" novalidate>
+      <form  action="{{url('register')}}" method="POST"   class="row g-3 needs-validation" novalidate>
+        {{csrf_field()}}
         <div class="col-12">
-          <label for="yourName" class="form-label">Your Name</label>
-          <input type="text" name="name" class="form-control" id="yourName" required>
-          <div class="invalid-feedback">Please, enter your name!</div>
+          <label for="yourName" class="form-label">Your First Name </label>
+          <input type="text" name="first_name" class="form-control" id="yourName" required>
+          <div class="invalid-feedback">Please, enter your first name!</div>
         </div>
 
         <div class="col-12">
-          <label for="yourEmail" class="form-label">Your Email</label>
-          <input type="email" name="email" class="form-control" id="yourEmail" required>
-          <div class="invalid-feedback">Please enter a valid Email adddress!</div>
+          <label for="yourName" class="form-label">Your Last Name </label>
+          <input type="text" name="last_name" class="form-control" id="yourName" required>
+          <div class="invalid-feedback">Please, enter your last name!</div>
         </div>
 
         <div class="col-12">
@@ -36,6 +37,13 @@
           </div>
         </div>
 
+        <div class="col-12">
+          <label for="yourEmail" class="form-label">Your Email</label>
+          <input type="email" name="email" class="form-control" id="yourEmail" required>
+          <div class="invalid-feedback">Please enter a valid Email adddress!</div>
+        </div>
+
+      
         <div class="col-12">
             <label for="yourPassword" class="form-label">Password</label>
             <div class="input-group">

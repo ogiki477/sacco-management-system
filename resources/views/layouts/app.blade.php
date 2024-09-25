@@ -39,14 +39,19 @@
 </head>
 
 <body>
-
+  
   <main>
+    
     <div class="container">
-
+      
       <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
         <div class="container">
           <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+               <!-- Toast Message (Inserted here) -->
+               @if(session('success') || session('error') || $errors->any())
+               <div id="toastContainer" class="position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 11;"></div>
+               @endif
 
               <div class="d-flex justify-content-center py-4">
                 <a href="" class="logo d-flex align-items-center w-auto">
@@ -57,7 +62,7 @@
               <!-- End Logo -->
 
 
-             <!-- Implementing both login and forgot Pages -->
+             
              @yield('content')
 
 
@@ -88,10 +93,60 @@
   <script src="{{url('public/vendor/php-email-form/validate.js' )}}"></script>
 
   <!-- Template Main JS File -->
-  <script src="{{url('public/js/main.js' )}}
-  
-  "></script>
+  <script src="{{url('public/js/main.js' )}}"></script>
+
+
+   <!-- Toast JavaScript -->
+   <script>
+    window.addEventListener('load', function() {
+        @if(session('success'))
+        showToast("{{ session('success') }}", 'bg-success');
+        @elseif(session('error'))
+        showToast("{{ session('error') }}", 'bg-danger');
+        @endif
+
+        @if($errors->any())
+        let errorMessages = '';
+        @foreach ($errors->all() as $error)
+          errorMessages += `{{ $error }}<br>`;
+        @endforeach
+        showToast(errorMessages, 'bg-danger');
+        @endif
+    });
+
+    function showToast(message, type) {
+    const toastContainer = document.getElementById('toastContainer');
+
+    // Create the toast structure
+    const toastElement = document.createElement('div');
+    toastElement.className = `toast align-items-center text-white ${type} border-0`;
+    toastElement.setAttribute('role', 'alert');
+    toastElement.setAttribute('aria-live', 'assertive');
+    toastElement.setAttribute('aria-atomic', 'true');
+
+    const toastBody = `
+        <div class="d-flex">
+            <div class="toast-body">${message}</div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    `;
+
+    toastElement.innerHTML = toastBody;
+    toastContainer.appendChild(toastElement);
+
+    // Initialize and show the toast with custom delay (e.g., 3000ms = 3 seconds)
+    const toast = new bootstrap.Toast(toastElement, { delay: 200 });
+    toast.show();
+
+    // Optionally remove the toast from DOM after it's hidden
+    toastElement.addEventListener('hidden.bs.toast', function () {
+        toastElement.remove();
+    });
+}
+
+  </script>
 
 </body>
 
+0726360232
 </html>
