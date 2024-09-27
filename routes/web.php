@@ -18,12 +18,20 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/',[AuthController::class,'login']);
-
+Route::post('login_post',[AuthController::class,'login_post']);
 Route::get('register',[AuthController::class,'register']);
 Route::post('register',[AuthController::class,'register_create']);
 
 Route::get('forgot',[AuthController::class,'forgot']);
 
-Route::get('admin/dashboard',[DashboardController::class,'dashboard']);
+Route::group(['middleware' => 'Admin'],function(){
+    Route::get('admin/dashboard',[DashboardController::class,'dashboard']);
+    Route::get('admin/staff/list',[StaffController::class,'staff']);
+});
 
-Route::get('admin/staff/list',[StaffController::class,'staff']);
+Route::group(['middleware'=>'Staff'],function(){
+    Route::get('staff/dashboard',[DashboardController::class,'dashboard']);
+});
+
+
+Route::get('logout',[AuthController::class,'logout']);

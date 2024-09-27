@@ -18,9 +18,9 @@
       </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="{{url('')}}">
+        <a class="nav-link collapsed" href="{{url('logout')}}">
           <i class="bi bi-box-arrow-in-right"></i>
-          <span>Login</span>
+          <span>Log Out</span>
         </a>
       </li><!-- End Login Page Nav -->
 

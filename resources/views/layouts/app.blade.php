@@ -135,7 +135,7 @@
     toastContainer.appendChild(toastElement);
 
     // Initialize and show the toast with custom delay (e.g., 3000ms = 3 seconds)
-    const toast = new bootstrap.Toast(toastElement, { delay: 200 });
+    const toast = new bootstrap.Toast(toastElement, { delay: 2000 });
     toast.show();
 
     // Optionally remove the toast from DOM after it's hidden
@@ -148,5 +148,5 @@
 
 </body>
 
-0726360232
+
 </html>
