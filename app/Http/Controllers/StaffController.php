@@ -26,7 +26,8 @@ class StaffController extends Controller
 
     public function admin_add_staff(Request $request){
         //echo "Yoo";
-        return view('admin.add_staff');
+        $data['meta_title'] = 'add_staff';
+        return view('admin.add_staff',$data);
     }
 
 }
