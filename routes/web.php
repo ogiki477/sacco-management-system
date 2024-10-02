@@ -26,11 +26,13 @@ Route::get('forgot',[AuthController::class,'forgot']);
 
 Route::group(['middleware' => 'Admin'],function(){
     Route::get('admin/dashboard',[DashboardController::class,'dashboard']);
-    Route::get('admin/staff/list',[StaffController::class,'staff']);
+    Route::get('admin/staff/list',[StaffController::class,'admin_staff']);
+    Route::get('admin/staff/add',[StaffController::class,'admin_add_staff']);
 });
 
 Route::group(['middleware'=>'Staff'],function(){
     Route::get('staff/dashboard',[DashboardController::class,'dashboard']);
+    Route::get('staff\list',[StaffController::class,'staff_list']);
 });
 
 

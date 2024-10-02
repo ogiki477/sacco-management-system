@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,12 +15,13 @@ class DashboardController extends Controller
 
             $data['meta_title'] = 'admin-dashboard';
 
-            return view('admin.dashboard.list',$data);
+            return view('admin.dashboard.admindashboard',$data);
 
         }elseif(Auth::user()->is_role == 0) {
             $data['meta_title'] = 'staff-dashboard';
+            $data['getRecord'] = User::get();
 
-            return view('admin.staff.list',$data);
+            return view('staff.dashboard.staffdashboard',$data);
         }
         
     }
