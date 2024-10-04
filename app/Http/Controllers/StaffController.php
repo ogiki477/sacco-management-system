@@ -35,9 +35,10 @@ class StaffController extends Controller
        // echo ('yoo');
        // dd($request->all());
 
-       $data = $request()->validate([
+       $data = $request->validate([
         'first_name' => 'required',
         'last_name' => 'required',
+        'username' => 'required',
         'email' => 'required|unique:users',
         'is_role'=> 'required'
 
@@ -60,6 +61,8 @@ class StaffController extends Controller
          $file->move('upload/profile/',$filename);
          $data->profile_picture = $filename;
        }
+
+       $data->remember_token = Str::random(50);
 
        $data->save();
 

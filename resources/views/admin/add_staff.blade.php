@@ -15,19 +15,19 @@
               <div class="row mb-3">
                 <label for="inputText" class="col-sm-2 col-form-label">FirstName <span style="color: red">*</span> </label>
                 <div class="col-sm-10">
-                  <input type="text" name="first_name" class="form-control" required>
+                  <input type="text" name="first_name" class="form-control" required value="{{ old("first_name")}} ">
                 </div>
               </div>
               <div class="row mb-3">
-                <label for="inputEmail" class="col-sm-2 col-form-label">LastName</label>
+                <label for="inputEmail" class="col-sm-2 col-form-label">LastName <span style="color: red">*</span> </label>
                 <div class="col-sm-10">
-                  <input type="text"  name="last_name" class="form-control">
+                  <input type="text"  name="last_name" class="form-control" required value="{{ old("last_name")}} ">
                 </div>
               </div>
               <div class="row mb-3">
                 <label for="inputPassword" class="col-sm-2 col-form-label">Username <span style="color: red">*</span> </label>
                 <div class="col-sm-10">
-                  <input type="text" name="username"  class="form-control" required>
+                  <input type="text" name="username"  class="form-control" required value="{{ old("username")}} ">
                 </div>
               </div>
               <div class="row mb-3">
@@ -40,13 +40,14 @@
               <div class="row mb-3">
                 <label for="inputNumber" class="col-sm-2 col-form-label">Email <span style="color: red">*</span> </label>
                 <div class="col-sm-10">
-                  <input type="email" name="email" class="form-control" required>
+                  <input type="email" name="email" class="form-control" required value="{{ old("email")}} ">
+                  <span style="color: red;">{{ $errors->first('email') }}</span>
                 </div>
               </div>
               <div class="row mb-3">
                 <label for="inputNumber" class="col-sm-2 col-form-label">Role<span style="color: red">*</span> </label>
                 <div class="col-sm-10">
-                  <select name="is_role" id="" class="form-select" required>
+                  <select name="is_role" id="" class="form-select" required >
                     <option value="">Choose Role</option>
                     <option value="0">Staff</option>
                     <option value="1">Admin</option>
@@ -57,7 +58,7 @@
               <div class="row mb-3">
                 <label for="inputNumber" class="col-sm-2 col-form-label">DOB</label>
                 <div class="col-sm-10">
-                  <input type="date" name="dob" class="form-control">
+                  <input type="date" name="dob" class="form-control" required>
                 </div>
               </div>
               <div class="row mb-3">
