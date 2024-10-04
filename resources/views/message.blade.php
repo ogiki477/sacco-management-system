@@ -23,7 +23,7 @@
 
 
 <!-- Include Bootstrap JS and Popper (if not already included) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+{{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
     window.addEventListener('load', function() {
@@ -82,4 +82,4 @@
     .toast {
         margin-top: 1rem;
     }
-</style>
+</style> --}}

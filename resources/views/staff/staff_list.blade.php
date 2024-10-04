@@ -2,10 +2,8 @@
 
 
 @section('content')
-
-
 <h1>Staff List</h1>
-
+@include('message')
 <section class="section">
     <div class="row">
       <div class="col-lg-12">
