@@ -10,16 +10,15 @@ class StaffController extends Controller
 {
     
     public function admin_staff(Request $request){
-
-        $data['getRecord'] = User::get();
+        //dd(User::select('is_delete')->get());
+        $data['getRecord'] = User::where('is_delete' ,'=', 0)->get();
         $data['meta_title'] = 'staff-list';
         return view('staff.staff_list',$data);
         
     }
 
      public function staff_list(Request $request){
-
-        $data['getRecord'] = User::get();
+        $data['getRecord'] = User::where('is_delete' ,'=', 0)->get();
         $data['meta_title'] = 'staff-list';
         return view('staff.staff_list',$data);
         
@@ -68,6 +67,23 @@ class StaffController extends Controller
 
        return redirect('admin/staff/list')->with('success','The User has been created Successfully');
 
+    }
+
+    public function admin_edit_staff(Request $request,$id){
+       $data['getRecord'] = User::where('id',$id)->first();
+       $data['meta_title'] = 'edit_staff';
+       return view('admin.edit_staff',$data);
+    }
+
+
+    public function staff_delete(Request $request,$id){
+
+        $data = User::find($id);
+        $data->is_delete = 1;
+        $data->save();
+       // $data->delete();
+        return redirect('admin/staff/list')->with('error','Record Deleted Successfully');
+        
     }
 
 }

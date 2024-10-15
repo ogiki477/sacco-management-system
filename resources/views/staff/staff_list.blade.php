@@ -33,8 +33,8 @@
                 <td>{{ date('d-m-Y',strtotime($getRecord->created_at)) }}</td>
                 <td>{{ !empty($getRecord->is_role) ? 'Admin' : 'Staff' }}</td>
                 <td> 
-                    <a href="{{ url('staff/invoices/edit/'.$getRecord->id) }}" class="btn btn-success"> <i class="bi bi-pencil-square"></i> </a>
-                    <a href="{{ url('staff/invoices/delete/'.$getRecord->id) }}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?')"><i class="bi bi-trash"></i></a>
+                    <a href="{{ url('admin/staff/edit/'.$getRecord->id) }}" class="btn btn-success"> <i class="bi bi-pencil-square"></i> </a>
+                    <a href="{{ url('admin/staff/delete/'.$getRecord->id) }}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?')"><i class="bi bi-trash"></i></a>
                     
                 </td>
                 </tr>
