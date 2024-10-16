@@ -31,6 +31,8 @@ Route::group(['middleware' => 'Admin'],function(){
     Route::post('admin/staff/add',[StaffController::class,'admin_add_staff_insert']);
     Route::get('admin/staff/edit/{id}',[StaffController::class,'admin_edit_staff']);
     Route::get('admin/staff/delete/{id}',[StaffController::class,'staff_delete']);
+    Route::post('admin/staff/update/{id}',[StaffController::class,'staff_update']);
+
     
 });
 
