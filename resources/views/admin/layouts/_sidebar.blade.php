@@ -8,14 +8,22 @@
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
-      </li><!-- End Dashboard Nav -->
+      </li>
 
       <li class="nav-item">
         <a class="nav-link @if(Request::segment(2) == 'staff') @else collapsed @endif" href="{{url('admin/staff/list')}}">
           <i class="bi bi-grid"></i>
           <span>Staff</span>
         </a>
-      </li><!-- End Dashboard Nav -->
+      </li>
+      
+      
+      <li class="nav-item">
+        <a class="nav-link @if(Request::segment(2) == 'loan_types') @else collapsed @endif" href="{{url('admin/loan/list')}}">
+          <i class="bi bi-grid"></i>
+          <span>Loan Types</span>
+        </a>
+      </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="{{url('logout')}}">

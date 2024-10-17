@@ -4,3 +4,4 @@ php artisan make:controller AuthController
 php artisan make:middleware AdminMiddleware
 
 php artisan make:middleware StaffMiddleware
+php artisan make:model LoanTypesModel

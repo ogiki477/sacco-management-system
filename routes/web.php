@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LoanTypesController;
 use App\Http\Controllers\StaffController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +33,15 @@ Route::group(['middleware' => 'Admin'],function(){
     Route::get('admin/staff/edit/{id}',[StaffController::class,'admin_edit_staff']);
     Route::get('admin/staff/delete/{id}',[StaffController::class,'staff_delete']);
     Route::post('admin/staff/update/{id}',[StaffController::class,'staff_update']);
+    Route::get('admin/loan/list',[LoanTypesController::class,'admin_loan_types']);
+    Route::get('admin/loan_types/add',[LoanTypesController::class,'add_loan_types']);
+    Route::post('admin/loan_types/add',[LoanTypesController::class,'add_loan_types_insert']);
+    Route::get('admin/loan_type/edit/{id}',[LoanTypesController::class,'edit_loan_types']);
+    Route::post('admin/loan_type/edit/{id}',[LoanTypesController::class,'insert_edit_loan_types']);
+    Route::get('admin/loan_type/delete/{id}',[LoanTypesController::class,'delete_loan_types']);
+    
+
+
 
     
 });
