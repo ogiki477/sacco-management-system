@@ -12,7 +12,7 @@
 
       <li class="nav-item">
         <a class="nav-link @if(Request::segment(2) == 'staff') @else collapsed @endif" href="{{url('admin/staff/list')}}">
-          <i class="bi bi-grid"></i>
+          <i class="bi bi-person"></i>
           <span>Staff</span>
         </a>
       </li>
@@ -20,8 +20,16 @@
       
       <li class="nav-item">
         <a class="nav-link @if(Request::segment(2) == 'loan_types') @else collapsed @endif" href="{{url('admin/loan/list')}}">
-          <i class="bi bi-grid"></i>
+          <i class="bi bi-currency-dollar"></i>
           <span>Loan Types</span>
+        </a>
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link @if(Request::segment(2) == 'loan_plan') @else collapsed @endif" href="{{url('admin/loan_plan/list')}}">
+          <i class="bi bi-cash"></i>
+          <span>Loan Plan</span>
         </a>
       </li>
 

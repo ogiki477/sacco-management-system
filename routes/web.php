@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LoanPlanController;
 use App\Http\Controllers\LoanTypesController;
 use App\Http\Controllers\StaffController;
 use Illuminate\Support\Facades\Route;
@@ -39,6 +40,12 @@ Route::group(['middleware' => 'Admin'],function(){
     Route::get('admin/loan_type/edit/{id}',[LoanTypesController::class,'edit_loan_types']);
     Route::post('admin/loan_type/edit/{id}',[LoanTypesController::class,'insert_edit_loan_types']);
     Route::get('admin/loan_type/delete/{id}',[LoanTypesController::class,'delete_loan_types']);
+    Route::get('admin/loan_plan/list',[LoanPlanController::class,'loan_plan_list']);
+    Route::get('admin/loan_plan/add',[LoanPlanController::class,'loan_plan_add']);
+    Route::post('admin/loan_plan/add',[LoanPlanController::class,'insert_loan_plan_add']);
+    Route::get('admin/loan_plan/edit/{id}',[LoanPlanController::class,'edit_loan_plan_add']);
+    Route::post('admin/loan_plan/edit/{id}',[LoanPlanController::class,'insert_edit_loan_plan_add']);
+    Route::get('admin/loan_plan/delete/{id}',[LoanPlanController::class,'delete_loan_plan_add']);
     
 
 
