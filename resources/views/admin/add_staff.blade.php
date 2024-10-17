@@ -34,7 +34,7 @@
                 <label for="inputPassword" class="col-sm-2 col-form-label">Mobile Number</label>
                 <div class="col-sm-10">
                   <input type="number"  name="mobile_number" class="form-control"  oninput="javascript: this.value = this.value.replace(/[^0-9]/g,''); 
-                  if(this.value.length > this.maxlength) this.value = this.value.slice(0, this.maxlength);" maxlength = "">
+                  if(this.value.length > this.maxlength) this.value = this.value.slice(0, this.maxlength);" maxlength = "10">
                 </div>
               </div>
               <div class="row mb-3">

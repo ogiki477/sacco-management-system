@@ -18,7 +18,7 @@
                 <tr>
                   <th data-type="date" data-format="YYYY/DD/MM">Registered Date</th>
                   <th>Months</th>
-                  <th>Interest Percentage</th>
+                  <th>Interest Percentage(%)</th>
                   <th>Penalty Rate</th>
                   <th>Action</th>
                 </tr>

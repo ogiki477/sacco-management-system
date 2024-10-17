@@ -15,19 +15,22 @@
               <div class="row mb-3">
                 <label for="inputText" class="col-sm-2 col-form-label">Months<span style="color: red">*</span> </label>
                 <div class="col-sm-10">
-                  <input type="text" name="Months" class="form-control" required >
+                  <input type="text" name="Months"  oninput="javascript: this.value = this.value.replace(/[^0-9]/g,''); 
+                  if(this.value.length > this.maxlength) this.value = this.value.slice(0, this.maxlength);" maxlength = "2" class="form-control" required >
                 </div>
               </div>
               <div class="row mb-3">
                 <label for="inputEmail" class="col-sm-2 col-form-label">Interest Percentage<span style="color: red">*</span> </label>
                 <div class="col-sm-10">
-                  <input type="text"  name="interest_percentage" class="form-control" required >
+                  <input type="text"  name="interest_percentage"   oninput="javascript: this.value = this.value.replace(/[^0-9]/g,''); 
+                  if(this.value.length > this.maxlength) this.value = this.value.slice(0, this.maxlength);" maxlength = "10" class="form-control" required >
                 </div>
               </div>
               <div class="row mb-3">
                 <label for="inputPassword" class="col-sm-2 col-form-label">Penalty Rate<span style="color: red">*</span> </label>
                 <div class="col-sm-10">
-                  <input type="text" name="penalty_rate"  class="form-control" required >
+                  <input type="text" name="penalty_rate"  oninput="javascript: this.value = this.value.replace(/[^0-9]/g,''); 
+                  if(this.value.length > this.maxlength) this.value = this.value.slice(0, this.maxlength);" maxlength = "10"  class="form-control" required >
                 </div>
               </div>
               <div class="row mb-16">
