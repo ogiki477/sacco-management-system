@@ -15,14 +15,14 @@ class LoanTypesController extends Controller
 
         $data['meta_title'] = 'loan_types';
 
-        return view('admin.loan.loan_list',$data);
+        return view('admin.loan_type.loan_list',$data);
     }
 
     public function add_loan_types(Request $request){
 
         $data['meta_title'] = 'add_loan';
 
-        return view('admin.loan.add_loan',$data);
+        return view('admin.loan_type.add_loan',$data);
 
         
     }
