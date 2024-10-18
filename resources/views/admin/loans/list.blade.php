@@ -16,8 +16,11 @@
             <thead>
               <tr>
                 <th data-type="date" data-format="YYYY/DD/MM">Registered Date</th>
-                <th>Loan Type</th>
-                <th>Description</th>
+                <th>Username</th>
+                <th>Loan Types</th>
+                <th>Loan Plans</th>
+                <th>Loan Amounts</th>
+                <th>Purpose</th>
                 <th>Action</th>
               </tr>
             </thead>
