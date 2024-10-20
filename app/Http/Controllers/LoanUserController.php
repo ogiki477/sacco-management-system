@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\LoanUser;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,7 @@ class LoanUserController extends Controller
         //dd('YOO');
         $data['meta_title' ] = 'users';
 
-        $data['getRecord'] = User::get();
+        $data['getRecord'] = LoanUser::get();
 
         return view('admin.loan_user.list',$data);
 
@@ -27,8 +28,8 @@ class LoanUserController extends Controller
     public function create()
     {
         // dd("Yoo");
-        $data['meta_title'] = 'create';
-        return view('admin.loan_user.add');
+        $data['meta_title'] = 'add_user';
+        return view('admin.loan_user.add',$data);
     }
 
     /**
@@ -36,7 +37,31 @@ class LoanUserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd("Yoo");
+        $data = new LoanUser();
+
+        // $data = $request->validate([
+        //     'first_name' => 'required',
+        //     'last_name'  => 'required',
+        //     'address' => 'required',
+        //     'contact' => 'required',
+        //     'email' => 'required|min:4',
+        //     'tax_id' => 'required'
+
+        // ]);
+
+        $data->first_name = trim($request->first_name);
+        $data->last_name = trim($request->last_name);
+        $data->address = trim($request->address);
+        $data->contact = trim($request->contact);
+        $data->email = trim($request->email);
+        $data->tax_id = trim($request->tax_id);
+
+        $data->save();
+
+        return redirect('admin/loan_user/list')->with('success','The loan User is Successfully Added');
+        
+
     }
 
     /**

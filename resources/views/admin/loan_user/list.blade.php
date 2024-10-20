@@ -16,11 +16,12 @@
             <thead>
               <tr>
                 <th data-type="date" data-format="YYYY/DD/MM">Registered Date</th>
-                <th>Username</th>
-                <th>Loan Types</th>
-                <th>Loan Plans</th>
-                <th>Loan Amounts</th>
-                <th>Purpose</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Address </th>
+                <th>Contact</th>
+                <th>Email</th>
+                <th>Tax ID</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -28,11 +29,16 @@
               @foreach ($getRecord as $getRecord)
               <tr>
               <td>{{ date('d-m-Y',strtotime($getRecord->created_at)) }}</td>
-              <td>{{$getRecord->type_name}}</td>
-              <td>{{$getRecord->description}}</td>
+              <td>{{$getRecord->first_name}}</td>
+              <td>{{$getRecord->last_name}}</td>
+              <td>{{$getRecord->address}}</td>
+              <td>{{$getRecord->contact}}</td>
+              <td>{{$getRecord->email}}</td>
+              <td>{{$getRecord->tax_id}}</td>
+              
               <td> 
-                  <a href="{{ url('admin/loan_type/edit/'.$getRecord->id) }}" class="btn btn-success"> <i class="bi bi-pencil-square"></i> </a>
-                  <a href="{{ url('admin/loan_type/delete/'.$getRecord->id) }}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?')"><i class="bi bi-trash"></i></a>
+                  <a href="{{ url('admin/loan_user/edit/'.$getRecord->id) }}" class="btn btn-success"> <i class="bi bi-pencil-square"></i> </a>
+                  <a href="{{ url('admin/loan_user/delete/'.$getRecord->id) }}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?')"><i class="bi bi-trash"></i></a>
                   
               </td>
               </tr>
