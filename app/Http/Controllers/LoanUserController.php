@@ -11,7 +11,11 @@ class LoanUserController extends Controller
      */
     public function index()
     {
-        //
+        //dd('YOO');
+        $data['meta_title' ] = 'users';
+
+        return view('admin.loan_user.list');
+
     }
 
     /**
