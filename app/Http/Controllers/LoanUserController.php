@@ -92,7 +92,31 @@ class LoanUserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // dd("Yoo");
+
+       
+
+        $data = $request->validate([
+            'first_name' => 'required',
+            'last_name'  => 'required',
+            'address' => 'required',
+            'tax_id' => 'required',
+            'contact' => 'required',
+        ]);
+
+        $data = LoanUser::find($id);
+
+        $data->first_name = trim($request->first_name);
+        $data->last_name = trim($request->last_name);
+        $data->address = trim($request->address);
+        $data->contact = trim($request->contact);
+        $data->email = trim($request->email);
+        $data->tax_id = trim($request->tax_id);
+
+        $data->save();
+
+        return redirect('admin/loan_user/list')->with('success','The loan User is Updated Successfully!!');
+        
     }
 
     /**

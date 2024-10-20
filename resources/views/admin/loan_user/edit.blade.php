@@ -10,7 +10,7 @@
             <h5 class="card-title">Edit Loan User</h5>
            
             <!-- General Form Elements -->
-            <form  action="{{url('admin/loann_user/update/'.$getRecord->id)}}" method="POST"  class="form-control" enctype="multipart/form-data">
+            <form  action="{{url('admin/loan_user/update/'.$getRecord->id)}}" method="POST"  class="form-control" enctype="multipart/form-data">
                 {{ csrf_field() }}
               <div class="row mb-3">
                 <label for="inputText" class="col-sm-2 col-form-label">FirstName <span style="color: red">*</span> </label>
