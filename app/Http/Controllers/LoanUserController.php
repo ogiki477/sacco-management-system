@@ -124,6 +124,10 @@ class LoanUserController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        //dd('Yoo');
+
+        $data = LoanUser::find($id);
+        $data->delete();
+        return redirect('admin/loan_user/list')->with('error','The User is Deleted');
     }
 }
