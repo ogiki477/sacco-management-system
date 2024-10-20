@@ -80,7 +80,11 @@ class LoanUserController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        //dd("Yoo");
+        $data['meta_title'] = 'edit_loan_user';
+        $data['getRecord'] = LoanUser::find($id);
+
+        return view('admin.loan_user.edit',$data);
     }
 
     /**
