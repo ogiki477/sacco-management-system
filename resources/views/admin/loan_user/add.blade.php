@@ -10,15 +10,30 @@
             <h5 class="card-title">Add Loan User</h5>
            
             <!-- General Form Elements -->
-            <form  action="{{url('admin/loan_plan/add')}}" method="POST"  class="form-control" enctype="multipart/form-data">
+            <form  action="{{url('admin/loan_user/add')}}" method="POST"  class="form-control" enctype="multipart/form-data">
                 {{ csrf_field() }}
               <div class="row mb-3">
-                <label for="inputText" class="col-sm-2 col-form-label">Months<span style="color: red">*</span> </label>
+                <label for="inputText" class="col-sm-2 col-form-label">First Name<span style="color: red">*</span> </label>
                 <div class="col-sm-10">
-                  <input type="text" name="Months"  oninput="javascript: this.value = this.value.replace(/[^0-9]/g,''); 
-                  if(this.value.length > this.maxlength) this.value = this.value.slice(0, this.maxlength);" maxlength = "2" class="form-control" required >
+                 <input type="text" name="first_name" class="form-control">
                 </div>
               </div>
+              
+              <div class="row mb-3">
+                <label for="inputText" class="col-sm-2 col-form-label">Last Name<span style="color: red">*</span> </label>
+                <div class="col-sm-10">
+                 <input type="text" name="last_name" class="form-control">
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label for="inputText" class="col-sm-2 col-form-label">Last Name<span style="color: red">*</span> </label>
+                <div class="col-sm-10">
+                 <input type="text" name="last_name" class="form-control">
+                </div>
+              </div>
+
+
               <div class="row mb-3">
                 <label for="inputEmail" class="col-sm-2 col-form-label">Interest Percentage<span style="color: red">*</span> </label>
                 <div class="col-sm-10">
