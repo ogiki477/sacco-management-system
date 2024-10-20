@@ -28,7 +28,7 @@ class LoanUserController extends Controller
     {
         // dd("Yoo");
         $data['meta_title'] = 'create';
-        return view('admin.loan_user.create');
+        return view('admin.loan_user.add');
     }
 
     /**
