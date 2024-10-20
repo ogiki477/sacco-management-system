@@ -15,14 +15,14 @@
               <div class="row mb-3">
                 <label for="inputText" class="col-sm-2 col-form-label">First Name<span style="color: red">*</span> </label>
                 <div class="col-sm-10">
-                 <input type="text" name="first_name" class="form-control">
+                 <input type="text" name="first_name" class="form-control" value="{{old('first_name') }}">
                 </div>
               </div>
               
               <div class="row mb-3">
                 <label for="inputText" class="col-sm-2 col-form-label">Last Name<span style="color: red">*</span> </label>
                 <div class="col-sm-10">
-                 <input type="text" name="last_name" class="form-control">
+                 <input type="text" name="last_name" class="form-control" value="{{ old("last_name")}}">
                 </div>
               </div>
 
@@ -37,7 +37,7 @@
               <div class="row mb-3">
                 <label for="inputText" class="col-sm-2 col-form-label">Contact<span style="color: red">*</span> </label>
                 <div class="col-sm-10">
-                    <input type="number" name="contact"  oninput="javascript: this.value = this.value.replace(/[^0-9]/g,''); 
+                    <input type="number" name="contact" value="{{ old('contact')}}" oninput="javascript: this.value = this.value.replace(/[^0-9]/g,''); 
                     if(this.value.length > this.maxlength) this.value = this.value.slice(0, this.maxlength);" maxlength = "10"  class="form-control" required >
                   </div>
               </div>
@@ -46,6 +46,7 @@
                 <label for="inputText" class="col-sm-2 col-form-label">Email<span style="color: red">*</span> </label>
                 <div class="col-sm-10">
                  <input type="email" name="email" class="form-control">
+                 <span style="color: red;">{{ $errors->first('email') }}</span>
                 </div>
               </div>
 
@@ -53,7 +54,7 @@
               <div class="row mb-3">
                 <label for="inputText" class="col-sm-2 col-form-label">Tax ID<span style="color: red">*</span> </label>
                 <div class="col-sm-10">
-                 <input type="text" name="tax_id" class="form-control">
+                 <input type="text" name="tax_id" class="form-control" value="{{ old('tax_id')}}">
                 </div>
               </div>
 

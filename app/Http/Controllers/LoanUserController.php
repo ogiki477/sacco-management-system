@@ -29,6 +29,7 @@ class LoanUserController extends Controller
     {
         // dd("Yoo");
         $data['meta_title'] = 'add_user';
+        //$data['getRecord'] = LoanUser::get();
         return view('admin.loan_user.add',$data);
     }
 
@@ -38,17 +39,19 @@ class LoanUserController extends Controller
     public function store(Request $request)
     {
         //dd("Yoo");
+        $data = $request->validate([
+            'first_name' => 'required',
+            'last_name'  => 'required',
+            'address' => 'required',
+            'contact' => 'required',
+            'email' => 'required|unique:loan_user',
+            'tax_id' => 'required'
+
+        ]);
+
         $data = new LoanUser();
 
-        // $data = $request->validate([
-        //     'first_name' => 'required',
-        //     'last_name'  => 'required',
-        //     'address' => 'required',
-        //     'contact' => 'required',
-        //     'email' => 'required|min:4',
-        //     'tax_id' => 'required'
-
-        // ]);
+       
 
         $data->first_name = trim($request->first_name);
         $data->last_name = trim($request->last_name);
