@@ -39,6 +39,19 @@
 
 
                   <div class="row mb-3">
+                    <label for="inputNumber" class="col-sm-2 col-form-label">Loan Staff<span style="color: red">*</span> </label>
+                    <div class="col-sm-10">
+                      <select name="staff_id" id="" class="form-select" required >
+                        <option value="">Select Loan Staff</option>
+                        @foreach($getLoanStaff as $getLoanStaff)
+                        <option value="{{$getLoanStaff->id}}">{{$getLoanStaff->first_name}} {{$getLoanStaff->last_name}}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                  </div>
+
+
+                  <div class="row mb-3">
                     <label for="inputNumber" class="col-sm-2 col-form-label">Loan Plan<span style="color: red">*</span> </label>
                     <div class="col-sm-10">
                       <select name="loan_plans_id" id="" class="form-select" required >

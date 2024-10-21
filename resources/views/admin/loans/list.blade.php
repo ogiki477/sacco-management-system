@@ -19,6 +19,7 @@
                 <th>Username</th>
                 <th>Loan Types</th>
                 <th>Loan Plans</th>
+                <th>Loan Staff</th>
                 <th>Loan Amounts</th>
                 <th>Purpose</th>
                 <th>Action</th>
@@ -28,8 +29,13 @@
               @foreach ($getRecord as $getRecord)
               <tr>
               <td>{{ date('d-m-Y',strtotime($getRecord->created_at)) }}</td>
-              <td>{{$getRecord->type_name}}</td>
-              <td>{{$getRecord->description}}</td>
+              <td>{{$getRecord->user_id}}</td>
+              <td>{{$getRecord->loan_types_id}}</td>
+              <td>{{$getRecord->loan_plans_id}}</td>
+              <td>{{$getRecord->staff_id}}</td>
+              <td>{{$getRecord->loan_amount}}</td>
+              <td>{{$getRecord->purpose}}</td>
+              
               <td> 
                   <a href="{{ url('admin/loan_type/edit/'.$getRecord->id) }}" class="btn btn-success"> <i class="bi bi-pencil-square"></i> </a>
                   <a href="{{ url('admin/loan_type/delete/'.$getRecord->id) }}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?')"><i class="bi bi-trash"></i></a>
