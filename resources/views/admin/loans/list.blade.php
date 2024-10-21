@@ -37,8 +37,8 @@
               <td>{{$getRecord->purpose}}</td>
               
               <td> 
-                  <a href="{{ url('admin/loan_type/edit/'.$getRecord->id) }}" class="btn btn-success"> <i class="bi bi-pencil-square"></i> </a>
-                  <a href="{{ url('admin/loan_type/delete/'.$getRecord->id) }}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?')"><i class="bi bi-trash"></i></a>
+                  <a href="{{ url('admin/loans/edit/'.$getRecord->id) }}" class="btn btn-success"> <i class="bi bi-pencil-square"></i> </a>
+                  <a href="{{ url('admin/loans/delete/'.$getRecord->id) }}" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete?')"><i class="bi bi-trash"></i></a>
                   
               </td>
               </tr>
