@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Loan;
 use App\Models\LoanPlan;
 use App\Models\LoanTypesModel;
+use App\Models\LoanUser;
 use Illuminate\Http\Request;
 
 class LoanController extends Controller
@@ -25,6 +26,7 @@ class LoanController extends Controller
     public function create()
     {
         $data['meta_title'] = 'add_loans';
+        $data['getLoanUser'] = LoanUser::get();
         $data['getLoanType'] = LoanTypesModel::get();
         $data['getLoanPlan'] = LoanPlan::get();
         return view('admin.loans.add',$data);

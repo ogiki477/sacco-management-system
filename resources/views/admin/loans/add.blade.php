@@ -1,7 +1,7 @@
 @extends('admin.layouts._app')
 
 @section('content')
-<section class="section">
+  <section class="section">
     <div class="row">
       <div class="col-lg-16">
 
@@ -13,13 +13,13 @@
             <form  action="{{url('admin/loans/add')}}" method="POST"  class="form-control" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="row mb-3">
-                    <label for="inputNumber" class="col-sm-2 col-form-label">Username<span style="color: red">*</span> </label>
+                    <label for="inputNumber" class="col-sm-2 col-form-label">Loan User<span style="color: red">*</span> </label>
                     <div class="col-sm-10">
                       <select name="user_id" id="" class="form-select" required >
-                        <option value="">Choose Username</option>
-                        <option value="0">Staff</option>
-                        <option value="1">Admin</option>
-    
+                        <option value="">Select Loan User</option>
+                        @foreach($getLoanUser as $getLoanUser)
+                        <option value="{{$getLoanUser->id}}">{{$getLoanUser->first_name}} {{$getLoanUser->last_name}}</option>
+                        @endforeach
                       </select>
                     </div>
                   </div>
@@ -84,6 +84,6 @@
 
       
     </div>
-  </section>
+   </section>
 @endsection
 

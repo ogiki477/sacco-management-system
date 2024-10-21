@@ -51,7 +51,8 @@ Route::group(['middleware' => 'Admin'],function(){
 
     //loan menu
     Route::get('admin/loans/list',[LoanController::class,'index']);    
-    Route::get('admin/loans/add',[LoanController::class,'create']);    
+    Route::get('admin/loans/add',[LoanController::class,'create']);
+    Route::post('admin/loans/add',[LoanController::class,'store']);    
 
 
     //Loan User 
