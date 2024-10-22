@@ -11,6 +11,12 @@ use Illuminate\Support\Str;
 class AuthController extends Controller
 {
     public function login(Request $request){
+
+        // $password = '1234';
+        // $hashedPassword = Hash::make($password);
+        // dd($hashedPassword);
+        // die();
+        
         $data['meta_title'] = 'login';
         return view('auth.login',$data);
     }
