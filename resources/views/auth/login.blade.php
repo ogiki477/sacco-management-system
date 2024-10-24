@@ -2,6 +2,11 @@
 @extends('layouts.app')
 
 
+
+
+
+
+
 @section('content')
               <!-- login Page starts -->
               <div class="card mb-3">
