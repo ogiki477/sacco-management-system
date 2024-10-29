@@ -3,7 +3,6 @@
 
 @section('content')
 
-
 <div class="pagetitle">
       <h1>Dashboard</h1>
       <nav>
@@ -14,8 +13,5 @@
       </nav>
     </div><!-- End Page Title -->
 <h1>Staff Dashboard </h1>
-
-
-   
 
 @endsection
